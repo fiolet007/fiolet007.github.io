@@ -1,0 +1,97 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+<script>
+var i=0;
+function func_yes(){
+//ветка "да" где подключился на пробное занятие
+if(i==0){
+document.getElementById("que").innerHTML="Всё хорошо, преподаватель на месте<br>🠗<br>Конец";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";
+}
+//ветка "да" где прошло больше 15 минут
+if(i==2){
+document.getElementById("que").innerHTML="Занятие будет?";
+}
+//ветка "да" где клиент отвечает
+if(i==1){
+document.getElementById("que").innerHTML="Напомнить о занятии<br>🠗<br>Занятие будет?";
+i=i+1;
+}
+//ветка "да" где пк включен и функционирует
+if(i==3){
+document.getElementById("que").innerHTML="Всё хорошо, преподаватель на месте<br>🠗<br>Конец";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";		
+}
+//ветка "да" где проблема решена?
+if(i==4){
+document.getElementById("que").innerHTML="Оповестить учеников о переносе занятия<br>🠗<br>Конец";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";
+}
+i=i+1;
+}
+function func_no(){
+//ветка "нет" где подключился на пробное занятие
+if(i==0){
+document.getElementById("que").innerHTML="Позвонить по телефону за 10 минут до начала<br>🠗<br>Преподаватель ответил?";
+}
+//ветка "нет" где клиент отвечает
+if(i==1){
+document.getElementById("que").innerHTML="Позвонить за 5 минут до начала<br>🠗<br>Ответ получен ?";
+}
+if(i==2){
+document.getElementById("que").innerHTML="Перенос занятия/Штраф преподавателя<br>🠗<br>Конец";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";
+i=0;
+}
+//ветка "нет" где пк включен и функционирует
+if(i==3){
+document.getElementById("que").innerHTML="Причина уважительная?";
+}
+//ветка "нет" где проблема решена?
+if(i==4){
+document.getElementById("que").innerHTML="Перенос занятия/Штраф преподавателя<br>🠗<br>Конец";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";
+}
+i=i+1;
+}
+</script>
+</head>
+<style> 
+   a{
+    color: black;
+	font-weight: bold;
+	text-decoration: none;
+   }
+   a:hover{
+   color: #6495ed;
+   }
+   p{
+   font-weight: bold;
+   }
+ </style> 
+<body style="font-family: 'Raleway', sans-serif;">
+<h1 align="center"><b>Проблемы с подключением</b></h1>
+<br>
+<p id="que">
+Отправить оповещение за 20 минут
+<br>
+🠗
+<br>
+Зашёл в канал связи?
+</p>
+<div id="main">
+<button id="but1" onclick="func_yes()">Да</button>
+<button id="but2" onclick="func_no()">Нет</button>
+</div>
+<br>
+<a href="mainproblem.html">🠔 Назад</a>
+</body>
+</html>

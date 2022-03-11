@@ -1,0 +1,85 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+<script>
+var i=0;
+function func_yes(){
+//ветка "да" где подключился на пробное занятие
+if(i==0){
+document.getElementById("que").textContent="Ребенок подключился и начал занятие?";
+}
+//ветка "да" где прошло больше 15 минут
+if(i==2){
+document.getElementById("que").innerHTML="Установка и настройка ПО<br>🠗<br>ТП помогла ?";
+}
+//ветка "да" где клиент отвечает
+if(i==1){
+document.getElementById("que").textContent="Начинаем занятие";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";	
+}
+//ветка "да" где пк включен и функционирует
+if(i==3){
+document.getElementById("que").textContent="Конец.";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";
+}
+i=i+1;
+}
+function func_no(){
+//ветка "нет" где подключился на пробное занятие
+if(i==0){
+document.getElementById("que").textContent="Перенос/Отмена занятия";
+document.getElementById("but1").style.visibility="hidden";
+document.getElementById("but2").style.visibility="hidden";
+}
+//ветка "нет" где клиент отвечает
+if(i==1){
+document.getElementById("que").innerHTML="Менеджер ведет ребенка в ТП<br>🠗<br>Проблема с ПО?";
+}
+if(i==2){
+document.getElementById("que").innerHTML="Проверка настроек платформы для связи?<br>ТП помогла ?";
+i=0;
+}
+//ветка "нет" где пк включен и функционирует
+if(i==3){
+document.getElementById("que").textContent="Менеджер ведет ребенка в ТП<br>🠗<br>Проблема с ПО?";
+i=0;
+}
+i=i+1;
+}
+</script>
+</head>
+<style> 
+   a{
+    color: black;
+	font-weight: bold;
+	text-decoration: none;
+   }
+   a:hover{
+   color: #6495ed;
+   }
+   p{
+   font-weight: bold;
+   }
+ </style> 
+<body style="font-family: 'Raleway', sans-serif;">
+<h1 align="center"><b>Проверка подключения ученика на занятие</b></h1>
+<br>
+<p id="que">
+Звонок менеджера ребенку
+<br>
+🠗
+<br>
+Дозвонился?
+</p>
+<div id="main">
+<button id="but1" onclick="func_yes()">Да</button>
+<button id="but2" onclick="func_no()">Нет</button>
+</div>
+<br>
+<a href="mainproblem.html">🠔 Назад</a>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+</head>
+<style>
+/* скрываем чекбоксы и блоки с содержанием */
+.hide,
+.hide + label ~ div {
+    display: none;
+}
+/* вид текста label */
+.hide + label {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+}
+/* вид текста label при активном переключателе */
+.hide:checked + label {
+    color: red;
+    border-bottom: 0;
+}
+/* когда чекбокс активен показываем блоки с содержанием  */
+.hide:checked + label + div {
+    display: block; 
+    background: #efefef;
+    margin-left: 20px;
+    padding: 10px;
+    /* чуточку анимации при появлении */
+     -webkit-animation:fade ease-in 0.5s; 
+     -moz-animation:fade ease-in 0.5s;
+     animation:fade ease-in 0.5s; 
+}
+/* анимация при появлении скрытых блоков */
+@-moz-keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }
+}
+@-webkit-keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }
+}
+@keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }   
+}
+.hide + label:before {
+    background-color: #1e90ff;
+    color: #fff;
+    content: "\002B";
+    display: block;
+    float: left;
+    font-size: 14px; 
+    font-weight: bold;
+    height: 16px;
+    line-height: 16px;
+    margin: 3px 5px;
+    text-align: center;
+    width: 16px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+   a{
+    color: black;
+	font-weight: bold;
+	text-decoration: none;
+   }
+   a:hover{
+   color: #6495ed;
+   }
+   div{
+   font-weight: bold;
+   }
+   label{
+   font-weight: bold;
+   }
+</style>
+<body style="font-family: 'Raleway', sans-serif;">
+<h1 align="center"><b>Регламентные работы</b></h1>
+
+<input class="hide" id="hd-1" type="checkbox" >
+<label for="hd-1">1. Напоминание клиенту о тестовом занятии.</label>
+<div>1.	Сообщение в мессенджер с дублирование даты и времени занятия.</div>
+<br>
+<input class="hide" id="hd-2" type="checkbox" >
+<label for="hd-2">2. Проверка обновления ПО.</label>
+<div>1.	Проверить есть ли обновления для программ, где происходят занятия</div>
+<br>
+<input class="hide" id="hd-3" type="checkbox" >
+<label for="hd-3">3. Проверка состояния личного кабинета преподавателя.</label>
+<div>1.	Проверить список учеников.<br>
+2.	Проверить посещаемость учеников.<br>
+3.	Проверить наличие методического материала к занятию
+</div>
+<br>
+<input class="hide" id="hd-4" type="checkbox" >
+<label for="hd-4">4. Проверка рабочего места </label>
+<div>1.	Удалить все лишние с рабочего места, с рабочего пространства за преподавателем</div>
+<br>
+<br>
+<a href="1.html">🠔 Назад</a>
+</body>
